@@ -1,3 +1,6 @@
+
+
+
 import { message } from "antd";
 import axios from "axios";
 import Link from "next/link";
@@ -205,6 +208,7 @@ const HomeFooter = () => {
               <img src="visa.svg" alt="Othoba Mart" className="w-14" />
               <img src="mastercard-4.svg" alt="Othoba Mart" className="w-14" />
               <img src="mobilepay.svg" alt="Othoba Mart" className="w-14" />
+              
               <img
                 src="google-wallet-2.svg"
                 alt="Othoba Mart"
