@@ -27,6 +27,7 @@ import useProvider from "../../hooks/useProvider";
 import CartMini from "../cart/CartMini";
 import HomeFooter from "../Footer/HomeFooter";
 import HomeMenu from "../menues/homeMenu";
+import TopAdsBanner from "../TopAdsBanner";
 import WishMini from "../wish/WishMini";
 
 const { Content } = Layout;
@@ -176,59 +177,14 @@ const HomeLayout = ({ children, title }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            {/*  */}
+            {/* top ads banner */}
             {showTop && (
-                <div className="top-header">
-                    <div className="bg"></div>
-
-                    <div
-                        className="top-close hover:text-white hover:font-bold"
-                        onClick={() => setShowTop(false)}
-                    >
-                        X
-                    </div>
-
-                    <div className="content">
-                        <div className="container mx-auto px-3 py-2">
-                            <div className="flex justify-between items-center">
-                                <div className="hidden sm:block">
-                                    <div className="flex items-center">
-                                        <span className="text-6xl font-bold mr-3 text-orange-400">
-                                            SALE
-                                        </span>
-
-                                        <div className="flex flex-col items-center justify-center">
-                                            <p className="m-0 text-xl font-black ">
-                                                25%
-                                            </p>
-                                            <p className="m-0 text-xl font-black">
-                                                OFF
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="uppercase text-center font-bold ">
-                                    <p className="m-0 border-double border-b-4  ">
-                                        Special Promo
-                                    </p>
-
-                                    <p className="m-0 text-orange-400">
-                                        Sale2022
-                                    </p>
-                                </div>
-                                <div className="mr-4 xl:mr-0">
-                                    <Link href="/shop" passHref>
-                                        <Button type="primary" shape="round">
-                                            Shop Now
-                                        </Button>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <TopAdsBanner
+                    promoCode={"Black Friday 101"}
+                    promoValue={"19%"}
+                    buttonSlug={"/shop"}
+                />
             )}
-            {/*  */}
 
             <header className="bg-white">
                 <div className="py-5 px-3 lg:px-0">
@@ -242,7 +198,7 @@ const HomeLayout = ({ children, title }) => {
                                 className="text-left"
                             >
                                 <div className="flex items-center w-full">
-                                    <div className="block lg:hidden flex items-center h-full">
+                                    <div className=" lg:hidden flex items-center h-full">
                                         <MenuOutlined
                                             className="text-xl pl-3"
                                             onClick={() => setVisible(!visible)}
@@ -293,7 +249,7 @@ const HomeLayout = ({ children, title }) => {
                                         </select>
                                     </div>
                                     <button
-                                        className={`btn inline-block py-2 xl:py-3 px-3 lg:px-5 bg-orange-500 text-white font-medium text-xl rounded-r-3xl hover:bg-orange-400 focus:bg-orange-400 focus:outline-none flex items-center ${
+                                        className={`btn py-2 xl:py-3 px-3 lg:px-5 bg-orange-500 text-white font-medium text-xl rounded-r-3xl hover:bg-orange-400 focus:bg-orange-400 focus:outline-none flex items-center ${
                                             loading && "cursor-not-allowed"
                                         }`}
                                         type="button"
