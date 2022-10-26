@@ -27,7 +27,7 @@ import useProvider from "../../hooks/useProvider";
 import CartMini from "../cart/CartMini";
 import HomeFooter from "../Footer/HomeFooter";
 import HomeMenu from "../menues/homeMenu";
-import TopAdsBanner from "../TopAdsBanner";
+import TopAdsBanner from "../shared/TopAdsBanner";
 import WishMini from "../wish/WishMini";
 
 const { Content } = Layout;
@@ -56,6 +56,11 @@ const HomeLayout = ({ children, title }) => {
             </Menu.Item>
         </Menu>
     );
+
+    const handleShoeAds = (show) => {
+        console.log("showTop", show);
+        setShowTop(show);
+    };
 
     const [maximumRole, setMaximumRole] = useState("customer");
 
@@ -183,6 +188,7 @@ const HomeLayout = ({ children, title }) => {
                     promoCode={"Black Friday 101"}
                     promoValue={"19%"}
                     buttonSlug={"/shop"}
+                    handleShoeAds={handleShoeAds}
                 />
             )}
 

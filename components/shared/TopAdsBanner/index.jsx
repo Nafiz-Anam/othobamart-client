@@ -1,13 +1,19 @@
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import React from "react";
 
-const TopAdsBanner = ({ promoCode, promoValue, buttonSlug }) => {
+const TopAdsBanner = ({ promoCode, promoValue, buttonSlug, handleShoeAds }) => {
+    const [show, setShow] = useState(true);
+
+    useEffect(() => {
+        handleShoeAds(show);
+    }, [show]);
+
     return (
         <div className="top-header">
             <div className="bg"></div>
             <div
                 className="top-close font-bold text-white cursor-pointer hover:text-orange-500"
-                onClick={() => setShowTop(false)}
+                onClick={() => setShow(false)}
             >
                 X
             </div>
