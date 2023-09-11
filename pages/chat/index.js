@@ -24,7 +24,7 @@ export default function Messenger() {
     const scrollRef = useRef();
 
     useEffect(() => {
-        socket.current = io("https://othobamart-chat-api.herokuapp.com/");
+        socket.current = io("https://othoba-mart-chat.onrender.com/");
         socket.current.on("getMessage", (data) => {
             setArrivalMessage({
                 sender: data.senderId,
